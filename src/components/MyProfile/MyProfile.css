@@ -1,0 +1,373 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #0073e6;
+  --secondary-color: ;
+  --background-color: #E6F4FF;
+  --card-background: #ffffff;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --success-color: #28a745;
+}
+
+.profile-container {
+  padding: 1px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  margin-top: -10px;
+}
+
+.profile-container h2 {
+  font-size: 1.6rem;
+  font-weight: 550;
+  margin-bottom: 10px;
+  color: rgb(21, 21, 21);
+  margin-left: -10px;
+  margin-top: 2px;
+}
+.profile-container p {
+  margin-top: -5px;
+  font-size: 15px;
+  margin-bottom: 17px;
+    margin-left: -10px;
+
+}
+.profile-starts{
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid white;
+  padding:7px;
+    margin-left: -20px;
+ height: 555px;
+}
+.profile-starts h3{
+  margin-top: 7px !important;
+  margin-left: 15px !important;
+  color: #260944 !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+}
+/* Tab Navigation */
+.profile-tabs {
+  margin-top: 0px;
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  padding: 10px 13px;
+  /* --- KEY CHANGE: Set background to the lightest shade of grey --- */
+  background-color: #ccc; 
+  font-size: 0.90rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.1s ease-in-out;
+  border-radius: 7px;
+}
+
+/* --- KEY CHANGE: Add a hover effect for the light grey tabs --- */
+.tab-button:hover {
+  background-color: #ccc; /* A slightly darker grey for hover */
+}
+
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom-color: transparent;
+  font-weight: 600;
+}
+
+/* Content Area */
+/* --- NOTE: This is already white, which matches your request --- */
+.profile-content {
+  /* background-color: var(--card-background); */
+  padding: 30px;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+}
+
+/* Form Styles */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  margin-top: -40px;
+  margin-left: -10px;
+}
+.profile-form h4{ 
+  font-weight: 540 !important;
+  font-size: 16px !important;
+  margin-top: 13px !important;
+}
+.profile-form p{ 
+  margin-top: -26px !important;
+  color: darkgrey !important;
+  font-size: 16px !important;
+  margin-left: 0px !important;
+}
+.form-group {
+  display: flex;
+  margin-top: -14px;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text-color);
+}
+.form-group input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.form-group input:disabled {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  cursor: not-allowed;
+}
+.form-description {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+/* --- KEY CHANGE: Added style for the required asterisk --- */
+.required-asterisk {
+  color: red !important;
+  margin-left: 4px;
+}
+
+/* Buttons */
+.btn-otp, .btn-save {
+  align-self: flex-start;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-otp {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-otp:hover {
+  background-color: #0073e6;
+}
+.btn-save {
+  background-color: var(--success-color);
+  color: white;
+  margin-top: 20px;
+}
+.btn-save:hover {
+  background-color: #218838;
+}
+
+/* Placeholder Text */
+.placeholder-text {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+/* Notification Toggles */
+.notification-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Coding Profiles */
+/* --- Coding Profiles --- */
+
+.coding-profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.coding-profile-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.coding-profile-item label {
+  font-weight: 500;
+  min-width: 150px; /* Increased to align labels properly */
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.coding-profile-item label i {
+  margin-right: 10px;
+  width: 16px;
+  text-align: center;
+}
+
+/* New class for the specific input field */
+.coding-input {
+  width: 250px; /* The 100px width you requested */
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  flex-shrink: 0; /* Prevents the input from shrinking */
+}
+/* Add this to your MyProfile.css file */
+
+/* Style for the platform logos */
+/* Add this to your MyProfile.css file */
+
+/* Style for the platform logos */
+.platform-logo {
+  width: 60px;       /* Increased from 24px */
+  height: 60px;      /* Increased from 24px */
+  margin-right: 10px;
+  vertical-align: middle; /* Aligns the logo with the text */
+}
+/* The .btn-otp class already exists and provides the blue button style */
+
+/* --- Styles for the two-column layout --- */
+.form-row-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+.input-with-icon {
+  position: relative; /* This is the anchor for the icon */
+  width: 95%; /* Ensure the container takes full width */
+}
+
+.input-with-icon i {
+  position: absolute; /* Take the icon out of normal flow */
+  left: 12px; /* Position it 12px from the left */
+  top: 50%; /* Position it 50% from the top */
+  transform: translateY(-50%); /* Pull it back up by 50% of its own height to center it perfectly */
+  color:grey;
+  z-index: 1;
+}
+
+.input-with-icon input {
+  width: 100%; /* Make the input take the full width of its container */
+  padding-left: 40px; /* Add padding to make space for the icon */
+  box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+  color: grey;
+}
+.profile-form-container h3{
+  margin-top: -10px;
+}
+.required {
+  color: red;
+  margin-left: 4px;
+}
+/* Add these new styles to your MyProfile.css file */
+
+/* --- Notification Page Styles --- */
+
+/* Wrapper for each notification setting and its description */
+.notification-block {
+  margin-bottom: 1px;
+}
+
+/* Style for the icon inside the toggle label */
+.toggle-item span i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+
+/* Makes the main label text (icon + name) bold */
+.toggle-label-bold {
+  font-weight: bold;
+  color: var(--text-color); /* Ensures the text color is consistent */
+}
+
+/* Style for the description text below each toggle */
+.toggle-description {
+  font-size: 0.9rem; /* Makes the text smaller */
+  color: var(--secondary-color);
+  margin-top: 2px;
+  margin-left: 35px; /* Aligns text with the label, not the icon */
+}
+.toggle-label-bold i{
+  margin-left: -20px;
+} 
+.toggle-item span i {
+  margin-right: 10px;
+  color: green; /* --- CHANGED --- */
+}
+/* Add this to your MyProfile.css file */
+
+/* Style for the icon inside the coding profile label */
+.coding-profile-item label i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+  width: 16px; /* Ensures all icons have the same width for alignment */
+  text-align: center;
+}
