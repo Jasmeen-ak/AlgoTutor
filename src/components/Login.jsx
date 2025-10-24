@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";   // ✅ Import navigation hook
 import { Eye, EyeOff } from "lucide-react";
 import "./Login.css";
 import logo from "../assets/logo.jpg";
@@ -6,6 +7,12 @@ import rightImage from "../assets/bg.jpeg";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();  // ✅ Initialize navigation
+
+  const handleLogin = (e) => {
+    e.preventDefault(); // prevent page refresh
+    navigate("/home");  // ✅ Redirect to Home page
+  };
 
   return (
     <div className="login-container">
@@ -24,7 +31,7 @@ const Login = () => {
           </p>
 
           {/* Form */}
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="input-group">
               <label>
                 Email Id <span className="required">*</span>
@@ -57,7 +64,7 @@ const Login = () => {
                 <label htmlFor="remember"> Remember me</label>
               </div>
               <a href="/" className="forgot-password">
-               <u> Forgot Password?</u>
+                <u>Forgot Password?</u>
               </a>
             </div>
 
